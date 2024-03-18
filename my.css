@@ -1,0 +1,702 @@
+ /* Color Palette */
+ :root {
+    --color-primary: #FE8040;      /* Coral */
+    --color-secondary: #0F0F0F;    /* Black */
+    --color-tertiary: #303030;     /* Dark Gray */
+    --color-quaternary: #CCCCCC;   /* Light Gray */
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+/* Header Styles */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--color-secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Set z-index to make it appear above other elements */
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  /* Logo Styles */
+  .logo-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo-text {
+    font-weight: bold;
+  }
+
+  .logo-name {
+    font-size: 15px; /* Label: Logo Font Size */
+    font-family: 'Nunito Sans'; /* Change the font-family of the logo */
+    letter-spacing: 1px; /* Add letter spacing */
+    margin-bottom: 5px; /* Adjust margin-bottom to reduce spacing */
+    text-align: center; /* Center the label */
+    color: var(--color-quaternary);
+  }
+
+  .logo-name span {
+    color: var(--color-primary); /* Change the color of "Dev" */
+  }
+
+  .logo-description {
+    font-size: 8px; /* Label: Description Font Size */
+    font-family: 'Nunito Sans'; /* Change the font-family of the description */
+    letter-spacing: 3px; /* Add letter spacing */
+    text-transform: uppercase; /* Convert to all capital letters */
+    margin-bottom: 0; /* Adjust margin-bottom to remove extra spacing */
+    text-align: center; /* Center the label */
+    color: var(--color-quaternary);
+  }
+
+  /* Button Styles */
+  .header-button {
+    display: flex;
+    align-items: center;
+  }
+
+/* Menu Button Styles (button2 class name) */
+.button2 {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.button2:before,
+  .button2:after,
+  .button2 span {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 2px;
+    background-color: var(--color-quaternary); /* Change the color of the menu button */
+    position: absolute;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .button2:before {
+    top: 6px;
+  }
+
+  .button2:after {
+    bottom: 6px;
+  }
+
+  .button2 span {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .button2.open span {
+    transform: translateY(-50%) rotate(-45deg);
+  }
+
+  .button2.open:before {
+    transform: translateY(0) rotate(-45deg);
+  }
+
+  .button2.open:after {
+    transform: translateY(0) rotate(45deg);
+  }
+
+  /* Navigation Styles */
+  .navigation {
+    position: fixed;
+    top: 59px;
+    height: 210px;
+    right: 2px; /* Adjust right position */
+    background-color: var(--color-tertiary); /* Change background color */
+    border: 1px solid var(--color-secondary); /* Add border */
+    padding: 10px; /* Add padding */
+    display: none;
+    z-index: 9999; /* Set z-index to make it appear above other elements */
+  }
+
+  .navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navigation ul li {
+    padding: 10px 20px;
+  }
+
+  .navigation ul li a {
+    color: var(--color-quaternary);
+    text-decoration: none;
+    font-family: 'Nunito Sans';
+    font-size:16px;
+    text-align: center;
+  }
+
+  /* Main Styles */
+  .main-content {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section {
+    width: 100%;
+    height: 100vh; /* Set a fixed height for the sections */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 24px;
+    color: var(--color-quaternary);
+    border-bottom: 1px solid var(--color-secondary); /* Add border-bottom */
+    position: relative; /* Add relative positioning */
+  }
+
+  .section#home,#about,#services,#projects,#contact{
+    background:var(--color-tertiary) ;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+/* Home style */
+
+#home{
+  height: auto;
+  width: 100%;
+}
+
+.home-container {
+  margin-top: 20px; /* Add margin to the top */
+  width: auto
+}
+
+.home-name{
+    font-family:'Nunito Sans';
+    font-size: 18px;
+    padding-top: 180px;
+}
+
+.home-namelogo {
+  font-family: "Archivo Black";
+  font-size: 100px;
+  padding: 1px;
+  color: transparent; /* Make text transparent */
+  -webkit-text-stroke: 1px #FE8040; /* Add text stroke */
+  background: linear-gradient(to right, #FE8040, transparent); /* Create linear gradient background */
+  -webkit-background-clip: text; /* Clip background to text */
+  animation: slide 30s linear infinite; /* Apply animation */
+}
+
+@keyframes slide {
+  100% {
+      background-position: 2000px 0px; /* Move background position diagonally */
+  }
+}
+
+.home-namedesc{
+    font-family: 'Nunito Sans';
+    font-size: 15px;
+    padding: 1px;
+    z-index: 1;
+}
+
+.home-namedesc span{
+    color: var(--color-primary);
+}
+
+.social-icons {
+  display: flex; /* Align icons in a row */
+  margin-top: 10px; /* Add margin between icons and the preceding span */
+  z-index: 1;
+}
+
+.social-icons i {
+  margin-right: 10px; /* Add spacing between icons */
+  color:#FE8040; /* Set icon color */
+  font-size: 18px; /* Set icon size */
+  border: 1px solid #FE8040; /* Add outline */
+  border-radius: 100%; /* Make the border rounded */
+  padding: 8px; /* Add padding inside the border */
+  transition: color 0.3s, border-color 0.3s; /* Add transition for color change */
+}
+
+.social-icons i:hover {
+  color: #FFA07A; /* Change color on hover */
+  border-color: #FFA07A; /* Change border color on hover */
+} 
+
+.cv-container {
+  margin-top: 20px; /* Add some space between the social icons and the button */
+  z-index: 1;
+}
+
+.download-cv-button {
+  display: inline-block;
+  padding: 10px 20px; /* Adjust padding as needed */
+  background-color: #FE8040; /* Set background color */
+  color: #CCCCCC; /* Set text color */
+  text-decoration: none;
+  font-size: 15px; /* Set font size */
+  font-family: 'Nunito Sans';
+  border-radius: 5px; /* Add border radius for rounded corners */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add smooth transition for hover effect */
+}
+
+.download-cv-button:hover {
+  background-color: #FFA07A; /* Change background color on hover */
+}
+
+.image-slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+  padding-top: 150px;
+  padding-bottom: 400px;
+  z-index: 1;
+}
+
+.image-slide img {
+  width: 180px; /* Adjust the size of the images */
+  height: 180px;
+  border-radius: 5px;
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition */
+  opacity: 0.5; /* Initially make all images slightly transparent */
+}
+
+.middle-slide img {
+  transform: scale(1.1);
+  opacity: 1; /* Keep the middle image always hovered */
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition */
+}
+
+/* About Style */
+
+.about-content {
+  text-align: center; /* Center-align the content within .about-content */
+  margin: 30px;
+}
+
+.about-content h2 {
+  font-family: 'Nunito Sans';
+  text-align: left;
+  position: relative;
+  top: -82px;
+}
+
+.about-content span,
+.about-content p {
+  font-family: 'Nunito Sans';
+  font-size: 18px;
+  text-align: left;
+}
+
+.about-namedesc {
+  position: relative;
+  top: -60px;
+  font-family: "Roboto";
+  font-size: 18px;
+  padding: 1px;
+}
+
+.about-namedesc span {
+  color: var(--color-primary);
+}
+
+.about-left-box {
+  position: relative; /* Set position to relative */
+  top: -80px; /* Adjust the top position to raise the box */
+  width: 10px; /* Adjust width as needed */
+  height: 40px; /* Adjust height as needed */
+  background-color: #FE8040; /* Set box color to orange */
+  margin-right: 10px; /* Add some margin to the right of the box */
+  float: left; /* Float the box to the left */
+}
+
+
+.hire-me-button{
+  margin-top: 30px;
+  display: inline-block;
+  padding: 10px 20px; /* Adjust padding as needed */
+  background-color: #FE8040; /* Set background color */
+  color:#CCCCCC; /* Set text color */
+  text-decoration: none;
+  font-size: 15px; /* Set font size */
+  font-family: "Roboto";
+  border-radius: 5px; /* Add border radius for rounded corners */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add smooth transition for hover effect */
+}
+
+.hire-me-button:hover {
+  background-color: #FFA07A; /* Change background color on hover */
+}
+
+
+/* Services Style */
+
+.services-content {
+  text-align: left; /* Align the content to the left */
+  margin: auto; /* Center the content horizontally */
+  position: relative; /* Add position relative to the parent container */
+  padding: 30px;
+  font-family: 'Nunito Sans';
+}
+
+.services-content h2 {
+  text-align: left; /* Align the "Services" heading to the left */
+  position: absolute; /* Set position to absolute */
+  top: -80px; /* Adjust the top position to move the heading up */
+  left: 52px; /* Adjust the left position */
+}
+
+.services-left-box {
+  position: absolute; /* Set position to absolute */
+  top: -50px; /* Adjust the top position to move the left box up */
+  left: 30px; /* Adjust the left position */
+  width: 10px; /* Adjust width as needed */
+  height: 40px; /* Adjust height as needed */
+  background-color: #FE8040; /* Set box color to orange */
+  margin-right: 10px; /* Add some margin to the right of the box */
+}
+
+/* Style for services boxes */
+.services-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Change this property */
+}
+
+/* Style for individual service */
+.service {
+  position: relative; /* Set position to relative */
+  width: calc(25% - 20px); /* Adjust width as needed */
+  background-color: #0F0F0F;
+  padding: 30px;
+  margin-bottom: 20px; /* Add margin between individual service boxes */
+}
+
+
+/* Style for orange line */
+.service::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -5px; /* Adjust position to align with the left side of the box */
+  width: 5px; /* Width of the orange line */
+  height: 100%; /* Height of the orange line */
+  background-color: #FE8040; /* Orange color */
+}
+
+/* Style for small boxes */
+.service .small-box {
+  position: absolute;
+  top: 24px; /* Adjust the position of the small boxes */
+  left: -16px; /* Adjust the position of the small boxes */
+  width: 27px; /* Width of the small boxes */
+  height: 30px; /* Height of the small boxes */
+  background-color: #FE8040; /* Color of the small boxes */
+  line-height: 30px; /* Adjust line-height to center the icon vertically */
+  text-align: center; /* Align the icon horizontally */
+}
+
+.small-box.icon1::after {
+  content: "\f121"; /* Unicode for the new Font Awesome icon */
+  font-family: FontAwesome;
+  font-size: 20px;
+  color: #CCCCCC; /* Color of the icon */
+}
+
+.small-box.icon2::after {
+  content: "\f109"; /* Unicode for the new Font Awesome icon */
+  font-family: FontAwesome;
+  font-size: 22px;
+  color:#CCCCCC; /* Color of the icon */
+}
+
+.small-box.icon3::after {
+  content: "\f030"; /* Unicode for the camera icon */
+  font-family: FontAwesome;
+  font-size: 18px;
+  color:#CCCCCC; /* Color of the icon */
+}
+
+/* Style for service heading */
+.service h3 {
+  margin-top: 0;
+  font-size: 20px;
+  color:#CCCCCC; /* Adjust color as needed */
+}
+
+/* Style for service description */
+.service p {
+  margin-bottom: 0;
+  font-size: 16px;
+  color:#CCCCCC; /* Adjust color as needed */
+}
+
+/* Style for service heading */
+.service h3 {
+  margin-top: 0;
+  font-size: 20px;
+  color:#CCCCCC; /* Adjust color as needed */
+}
+
+/* Style for service description */
+.service p {
+  margin-bottom: 0;
+  font-size: 16px;
+  color:#CCCCCC; /* Adjust color as needed */
+}
+
+
+/* Project Style */
+
+.project-content {
+  font-family: 'Nunito Sans';
+  text-align: left;
+  padding: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* I-set ang align-items sa center */
+}
+
+.project-content h2 {
+  text-align: left; /* Align the "Services" heading to the left */
+  position: absolute; /* Set position to absolute */
+  top: -50px; /* Adjust the top position to move the heading up */
+  left: 60px; /* Adjust the left position */
+}
+
+.project-left-box {
+  position: absolute; /* Set position to absolute */
+  top: -20px; /* Adjust the top position to move the left box up */
+  left: 40px; /* Adjust the left position */
+  width: 10px; /* Adjust width as needed */
+  height: 40px; /* Adjust height as needed */
+  background-color: #FE8040; /* Set box color to orange */
+  margin-right: 10px; /* Add some margin to the right of the box */
+}
+
+.project-boxes {
+  margin-top: auto;
+  display: flex;
+  margin-top: 20px;
+  flex-direction: row;
+  align-items: center; /* I-set ang align-items sa center */
+  width: 100%;
+  height: auto;
+}
+
+.project-box {
+  bottom: -55px;
+  width:100%;
+  height: 380px;
+  max-width: 800px;
+  background-color:#0F0F0F;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 20px;
+  position: relative;
+  margin-right: 20px;
+}
+
+.project-box:hover .project-scroll {
+  display: block;
+}
+
+.project-scroll {
+  height: 350px;
+  display: none;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin-bottom: 10px;
+  display: none; /* Initially hide images */
+}
+
+.project-box img {
+  max-width: 100%; /* Set maximum width to prevent images from exceeding container width */
+  max-height: 100%; /* Set maximum height to prevent images from exceeding container height */
+  object-fit: contain; /* Adjust how the image fits within its container */
+  
+}
+
+.project-box:hover .project-text {
+  display: none;
+}
+
+.project-text{
+  font-size: 16px;
+}
+
+.project-text p{
+  font-size:13px;
+}
+
+
+/*Contact Style*/
+
+.contact-content {
+  text-align: left;
+  padding: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Nunito Sans';
+}
+
+.contact-content h2 {
+  text-align: left;
+  position: absolute;
+  top: -70px;
+  left: 60px;
+}
+
+.contact-left-box {
+  position: absolute;
+  top: -40px;
+  left: 40px;
+  width: 10px;
+  height: 40px;
+  background-color: #FE8040;
+  margin-right: 10px;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 30px;
+}
+
+.form-row {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  flex: 1;
+}
+
+.form-group:not(:last-child) {
+  margin-right: 30px; /* Adjust spacing between form groups */
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 355px;
+  max-width: 100%;
+  padding: 10px;
+  border: 2px solid #0F0F0F;
+  border-radius: 5px;
+  background-color:#303030;
+  color: #CCCCCC;
+}
+
+textarea {
+  width: 900px; /* You can adjust this width */
+  max-width: 100%; /* Ensure the textarea does not exceed its container */
+  padding: 10px;
+  border: 2px solid #0F0F0F;
+  border-radius: 5px;
+  resize: vertical;
+  height: 150px; /* Adjust the height as needed */
+}
+
+
+button[type="submit"] {
+  display: block; /* Change button display to block */
+  margin: 0 auto; /* Center the button horizontally */
+  background-color: #FE8040;
+  color: #fff;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #FFA07A;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  height: 50px;
+  color: var(--color-quaternary);
+  text-align: left;
+  width: 100%;
+  height: 60px;
+  font-family: 'Nunito Sans';
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between; /* Align items to the left and right */
+  align-items: center; /* Vertically center items */
+  width: 100%; /* Ensure the content fills the footer */
+}
+
+.footer-content p {
+  margin-left: 35px;
+}
+
+#scroll-to-top{
+  margin-right: 45px;
+  font-size: 18px;
+  color: #FE8040;
+}
+  /* Particle Animation */
+  #particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+
